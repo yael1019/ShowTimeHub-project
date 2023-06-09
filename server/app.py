@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_migrate import Migrate 
-from models import db, User, Watch
+from models import db, User, Watch, Video
 import os 
 from flask_bcrypt import Bcrypt 
 from dotenv import load_dotenv
@@ -73,6 +73,34 @@ def check_session():
     if not user:
         return {'Error': 'Not logged in'}, 401
     return jsonify(user.to_dict()), 200
+
+#! WATCH ROUTES
+@app.get('/watch')
+def get_watched():
+    watched = Watch.query.all()
+    return jsonify([watch.to_dict() for watch in watched]), 200
+
+#! VIDEO ROUTES
+@app.get('/videos')
+def get_videos():
+    videos = Video.query.all()
+    return jsonify([video.to_dict() for video in videos]), 200
+
+@app.get('/videos/<int:id>')
+def get_video(id):
+    video = Video.query.get(id)
+    return jsonify(video.to_dict()), 200
+
+@app.get('/videos/user/<int:id>')
+def get_user_videos(id):
+    # print('working')
+    user = User.query.get(id)
+    # watch = user.watched
+    videos = user.videos
+    # print(watch)
+    # print(videos)
+    return jsonify([video.to_dict() for video in videos]), 200
+
 
 if __name__ == '__main__':
     app.run(port=3001, debug=True)
