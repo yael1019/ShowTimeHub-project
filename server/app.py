@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_migrate import Migrate 
-from models import db, User, Watch
+from models import db, User, Watch, Video
 import os 
 from flask_bcrypt import Bcrypt 
 from dotenv import load_dotenv
@@ -56,23 +56,63 @@ def delete_user(id):
     db.session.commit()
     return jsonify(f'{name}\'s account was deleted'), 200
 
-#! LOGIN ROUTE
+#! LOGIN/LOGOUT ROUTE
 @app.post('/login')
 def login():
     data = request.json
+    print(data['email'])
     user = User.query.where(User.email == data['email']).first()
+    print('user:', user)
+    print(user.to_dict())
     if user and bcrypt.check_password_hash(user.password, data['password']):
         session['user_id'] = user.id
         return jsonify(user.to_dict()), 201
+    else:
+        return {"message": "Invalid username or password"}, 401
+
+@app.delete('/logout')
+def logout():
+    session.pop('user_id')
+    return {}, 204
+
 
 #! CHECKING SESSION ROUTE
 @app.get('/check_session')
 def check_session():
     user_id = session['user_id']
     user = User.query.get(user_id)
-    if not user:
+    if user:
+        return jsonify(user.to_dict()), 200
+    else:
         return {'Error': 'Not logged in'}, 401
-    return jsonify(user.to_dict()), 200
+
+#! WATCH ROUTES
+@app.get('/watch')
+def get_watched():
+    watched = Watch.query.all()
+    return jsonify([watch.to_dict() for watch in watched]), 200
+
+#! VIDEO ROUTES
+@app.get('/videos')
+def get_videos():
+    videos = Video.query.all()
+    return jsonify([video.to_dict() for video in videos]), 200
+
+@app.get('/videos/<int:id>')
+def get_video(id):
+    video = Video.query.get(id)
+    return jsonify(video.to_dict()), 200
+
+@app.get('/videos/user/<int:id>')
+def get_user_videos(id):
+    # print('working')
+    user = User.query.get(id)
+    # watch = user.watched
+    videos = user.videos
+    # print(watch)
+    # print(videos)
+    return jsonify([video.to_dict() for video in videos]), 200
+
 
 if __name__ == '__main__':
     app.run(port=3001, debug=True)

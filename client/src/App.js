@@ -1,39 +1,100 @@
-import logo from './logo.svg';
 import './App.css';
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
+import Homepage from './Homepage/Homepage';
+import Settings from './Settings/Settings';
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import NoMatch from './NoMatch'
+import Movies from './Filter/Movies/Movies';
+import Shows from './Filter/Shows/Shows';
+import Nav from './Nav/Nav'
+import Categories from './Filter/Categories/Categories';
+import SingleCategory from './Filter/Categories/SingleCategory';
+import Login from './Login/Login';
 
 function App() {
-// useEffect(() => {
-//   console.log('hi')
-//   const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': 'eeee85e3c7mshfd54b6ce4fba9c3p17a142jsne340013be811',
-//       'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
-//     }
-//   };
-//   fetch(url, options)
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-// }, [])
-// breioernorgf
+  const [videos, setVideos] = useState([])
+  const navigate = useNavigate()
+  const [currentUser, setCurrentUser] = useState(null)
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    fetch('/check_session')
+      .then(res => {
+        if(res.ok) {
+          res.json()
+          .then(data => setCurrentUser(data))
+          setLoaded(true)
+        }
+      })
+  }, [])
+
+  useEffect(() => {
+    fetch('/videos')
+      .then(res => res.json())
+      .then(data => setVideos(data))
+  }, [])
+
+  function handleLogin(form) {
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accepts': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+      .then(res => {
+        if(res.ok) {
+          res.json()
+          .then(data => setCurrentUser(data))
+          setLoaded(true)
+          navigate('/')
+        }else {
+          res.json()
+          .then(data => alert(data.message))
+          setLoaded(true)
+        }
+      })
+  }
+  function handleLogout() {
+    setCurrentUser(null)
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    navigate('/login')
+  }
+
+  if(!loaded) {
+    return (
+      <>
+        <p>Loading</p>
+      </>
+    )
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        currentUser
+        ?
+        (
+          <>
+            <Nav />
+            <Routes>
+              <Route path='/' element={ <Homepage videos={videos} handleLogout={ handleLogout }/> }/>
+              <Route path='settings' element={ <Settings /> }/>
+              <Route path='*' element={ <NoMatch /> }/>
+              <Route path='movies' element={ <Movies videos={videos} /> }/>
+              <Route path='shows' element={ <Shows videos={videos} /> }/>
+              <Route path='categories' element={ <Categories /> }/>
+              <Route path='category' element={ <SingleCategory videos={videos} /> }/>
+              <Route path='login' element={ <Login /> }/>
+            </Routes>
+          </>
+        )
+        :
+        <Login handleLogin={ handleLogin }/>
+      }
     </div>
   );
 }
