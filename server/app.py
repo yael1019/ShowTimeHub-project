@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_migrate import Migrate 
 from models import db, User, Watch, Video
 import os 
@@ -56,23 +56,35 @@ def delete_user(id):
     db.session.commit()
     return jsonify(f'{name}\'s account was deleted'), 200
 
-#! LOGIN ROUTE
+#! LOGIN/LOGOUT ROUTE
 @app.post('/login')
 def login():
     data = request.json
+    print(data['email'])
     user = User.query.where(User.email == data['email']).first()
+    print('user:', user)
+    print(user.to_dict())
     if user and bcrypt.check_password_hash(user.password, data['password']):
         session['user_id'] = user.id
         return jsonify(user.to_dict()), 201
+    else:
+        return {"message": "Invalid username or password"}, 401
+
+@app.delete('/logout')
+def logout():
+    session.pop('user_id')
+    return {}, 204
+
 
 #! CHECKING SESSION ROUTE
 @app.get('/check_session')
 def check_session():
     user_id = session['user_id']
     user = User.query.get(user_id)
-    if not user:
+    if user:
+        return jsonify(user.to_dict()), 200
+    else:
         return {'Error': 'Not logged in'}, 401
-    return jsonify(user.to_dict()), 200
 
 #! WATCH ROUTES
 @app.get('/watch')

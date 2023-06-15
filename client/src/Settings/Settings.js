@@ -1,12 +1,14 @@
 import React from 'react'
 import './Settings.css'
-import { FaRegUserCircle } from 'react-icons/fa'
+import { TbCircleLetterX } from 'react-icons/tb'
+import { useNavigate } from 'react-router-dom'
 
 
 function Settings() {
+  const navigate = useNavigate()
   return (
     <div>
-        {/* <p id='userIcon'><FaRegUserCircle size={25}/></p> */}
+        <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
     </div>
   )
 }
