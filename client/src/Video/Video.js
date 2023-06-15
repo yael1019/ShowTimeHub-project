@@ -12,9 +12,6 @@ function Video({ videos }) {
   return (
     <div>
       <Search />
-      <Movies />
-      <Shows />
-      <Categories />
       {
         videos[0] !== undefined
         ?

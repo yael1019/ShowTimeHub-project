@@ -1,0 +1,61 @@
+#userIcon {
+    color: white;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    /* size: 4rem; */
+}
+
+#movies{
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    margin-left: 4rem;
+    border: 0.5px solid white;
+    border-radius: 10%;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+#shows {
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    margin-left: 12rem;
+    border: 0.5px solid white;
+    border-radius: 10%;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+#categories {
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    margin-left: 20rem;
+    border: 0.5px solid white;
+    border-radius: 10%;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
