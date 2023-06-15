@@ -2,7 +2,6 @@ import React from 'react'
 import '../filter.css'
 import { TbCircleLetterX } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
-import SingleCategory from './SingleCategory'
 
 function Categories() {
   const navigate = useNavigate()
