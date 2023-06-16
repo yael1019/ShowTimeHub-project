@@ -11,6 +11,7 @@ import Categories from './Filter/Categories/Categories';
 import SingleCategory from './Filter/Categories/SingleCategory';
 import Login from './Login/Login';
 import Watched from './Settings/Watched';
+import VideoInfoPage from './Video/VideoInfoPage';
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -91,6 +92,7 @@ function App() {
               <Route path='categories' element={ <Categories /> }/>
               <Route path='category' element={ <SingleCategory videos={videos} /> }/>
               <Route path='login' element={ <Login /> }/>
+              <Route path='videoInfo' element={ <VideoInfoPage /> }/>
             </Routes>
           </>
         )
