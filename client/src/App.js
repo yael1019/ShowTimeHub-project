@@ -10,6 +10,7 @@ import Nav from './Nav/Nav'
 import Categories from './Filter/Categories/Categories';
 import SingleCategory from './Filter/Categories/SingleCategory';
 import Login from './Login/Login';
+import Watched from './Settings/Watched';
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -82,7 +83,8 @@ function App() {
             <Nav />
             <Routes>
               <Route path='/' element={ <Homepage videos={videos} handleLogout={ handleLogout }/> }/>
-              <Route path='settings' element={ <Settings /> }/>
+              <Route path='settings' element={ <Settings currentUser={ currentUser } /> }/>
+              <Route path='watched' element={ <Watched /> }/>
               <Route path='*' element={ <NoMatch /> }/>
               <Route path='movies' element={ <Movies videos={videos} /> }/>
               <Route path='shows' element={ <Shows videos={videos} /> }/>
