@@ -1,10 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 function ShowCard({ show }) {
   return (
-    <div>
-        <img src={show.image} alt='poster'/>
-    </div>
+    <motion.div 
+    layout
+    animate={{opacity: 1}}
+    initial={{opacity: 0}}
+    >
+        <img src={show.image} alt='poster' className='allVids'/>
+    </motion.div>
   )
 }
 

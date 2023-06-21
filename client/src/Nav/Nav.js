@@ -2,15 +2,25 @@ import React from 'react'
 import './Nav.css'
 import { NavLink } from 'react-router-dom';
 import { FaRegUserCircle } from 'react-icons/fa'
+import { useRef } from 'react';
+import { motion } from 'framer-motion'
 
 function Nav() {
-  return (
-    <div>
+  const navRef = useRef()
+  function navButtons() {
+    navRef.current.classList.toggle('active')
+  }
+   return (
+    <motion.div
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    transition={{duration: 1.5, delay: 0.3}}
+     ref={navRef}>
         <NavLink id='userIcon' to='settings'><FaRegUserCircle size={25}/></NavLink>
-        <NavLink id='movies' to='movies'>Movies</NavLink>
+        <NavLink onClick={navButtons} id='movies' to='movies'>Movies</NavLink>
         <NavLink id='shows' to='shows'>Shows</NavLink>
         <NavLink id='categories' to='categories'>Categories</NavLink>
-    </div>
+    </motion.div>
   )
 }
 

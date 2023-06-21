@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Watched from './Watched'
 
 
-function Settings({ currentUser }) {
+function Settings({ currentUser, handleLogout }) {
   const navigate = useNavigate()
   function handleWatched() {
     navigate('/watched', {state: currentUser})
@@ -18,6 +18,7 @@ function Settings({ currentUser }) {
         <h2>{ currentUser.email }</h2>
         <h2>password: *******</h2>
         <p onClick={handleWatched}>Watched</p>  
+        <button onClick={ handleLogout }>Logout</button>
     </div>
   )
 }

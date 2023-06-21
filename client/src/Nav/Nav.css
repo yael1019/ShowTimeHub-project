@@ -59,3 +59,7 @@
     text-decoration: none;
     color: white;
 }
+
+.active {
+   background-color: rgb(67, 5, 67); 
+}

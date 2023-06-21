@@ -3,6 +3,7 @@ import '../filter.css'
 import { TbCircleLetterX } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
 import ShowCard from './ShowCard'
+import { motion } from 'framer-motion'
 
 function Shows({ videos }) {
   const navigate = useNavigate()
@@ -11,9 +12,11 @@ function Shows({ videos }) {
   return (
     <div>
       <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
-      {
-        mappedShows
-      }
+      <motion.div layout className='videos'>
+        {
+          mappedShows
+        }
+      </motion.div>
     </div>
   )
 }

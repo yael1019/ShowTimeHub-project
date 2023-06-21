@@ -3,9 +3,11 @@ import './Video.css'
 import VideoCard from './VideoCard'
 import Search from '../Search/Search'
 import HomeCard from './HomeCard'
+import { motion, useScroll } from 'framer-motion'
 
 function Video({ videos }) {
   const [searching, setSearching] = useState('')
+  // const { scrollYProgress } = useScroll({})
   const filteredSearch = videos.filter(video => video.title.toLowerCase().includes(searching.toLowerCase()))
   const mappedVideo = filteredSearch.map(video => video.id === 1 ? null : <VideoCard key={video.id} video={video} />)
   return (
@@ -18,11 +20,16 @@ function Video({ videos }) {
         :
         null
       }
-      <div className='flexImage'>
+      <motion.div 
+      // style={{scaleX: scrollYProgress }} 
+      // initial={{opacity: 0}}
+      // whileInView={{opacity: 1}}
+      // transition={{duration: 2}}
+      className='flexImage'>
         {
           mappedVideo
         }
-      </div>
+      </motion.div>
     </div>
   )
 }

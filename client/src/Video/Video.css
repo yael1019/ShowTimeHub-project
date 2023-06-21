@@ -1,8 +1,11 @@
 .flexImage {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+    margin: 2rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
 }
 
 #first{
@@ -13,8 +16,11 @@
 }
 
 #all {
-    width: 15rem;
-    margin-left: 1rem;
-    margin-bottom: 2.5rem;
-    height: 22rem;
+    /* width: 15rem; */
+    /* margin-left: 1rem; */
+    /* margin-bottom: 2.5rem; */
+    /* height: 30vh; */
+    height: 27rem;
+    width: 100%;
+    object-fit: cover;
 }

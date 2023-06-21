@@ -84,7 +84,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path='/' element={ <Homepage videos={videos} handleLogout={ handleLogout }/> }/>
-              <Route path='settings' element={ <Settings currentUser={ currentUser } /> }/>
+              <Route path='settings' element={ <Settings currentUser={ currentUser } handleLogout={handleLogout} /> }/>
               <Route path='watched' element={ <Watched /> }/>
               <Route path='*' element={ <NoMatch /> }/>
               <Route path='movies' element={ <Movies videos={videos} /> }/>
