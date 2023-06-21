@@ -7,6 +7,7 @@
     margin: 1rem;
     margin-top: 4rem;
     /* size: 4rem; */
+    border: none;
 }
 
 #movies{
@@ -15,10 +16,10 @@
     margin: 1rem;
     margin-top: 4rem;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: 4rem;
-    border: 0.5px solid white;
-    border-radius: 10%;
+    /* border: 2px solid white; */
+    /* border-radius: 10%; */
     padding: 10px;
     padding-right: 15px;
     padding-left: 15px;
@@ -32,10 +33,10 @@
     margin: 1rem;
     margin-top: 4rem;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: 12rem;
-    border: 0.5px solid white;
-    border-radius: 10%;
+    /* border: 2px solid white; */
+    /* border-radius: 10%; */
     padding: 10px;
     padding-right: 15px;
     padding-left: 15px;
@@ -49,10 +50,10 @@
     margin: 1rem;
     margin-top: 4rem;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: 20rem;
-    border: 0.5px solid white;
-    border-radius: 10%;
+    /* border: 2px solid white; */
+    /* border-radius: 10%; */
     padding: 10px;
     padding-right: 15px;
     padding-left: 15px;
@@ -61,5 +62,8 @@
 }
 
 .active {
-   background-color: rgb(67, 5, 67); 
+   /* background-color: rgb(199, 7, 7);  */
+   border-bottom: 1px solid red;
+   border-top: 1px solid red;
+   font-size: 1.5rem;
 }

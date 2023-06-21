@@ -12,9 +12,9 @@ function Nav() {
   }
    return (
     <motion.div
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}
-    transition={{duration: 1.5, delay: 0.3}}
+    initial={{opacity: 0,}}
+    animate={{opacity: 1,}}
+    transition={{duration: 1.7, delay: 0.3}}
      ref={navRef}>
         <NavLink id='userIcon' to='settings'><FaRegUserCircle size={25}/></NavLink>
         <NavLink onClick={navButtons} id='movies' to='movies'>Movies</NavLink>
