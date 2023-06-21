@@ -11,8 +11,8 @@ function Movies({ videos }) {
   const mappedMovies = filterMovies.map(movie => <MovieCard key={movie.id} movie={movie} />)
   return (
     <div>
-      <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
-      <motion.div layout className='videos'>
+      <p className='exit' onClick={() => navigate('/')}><TbCircleLetterX /></p>
+      <motion.div className='videos'>
         {
           mappedMovies
         }

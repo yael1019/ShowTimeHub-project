@@ -11,8 +11,8 @@ function Shows({ videos }) {
   const mappedShows = filterShows.map(show => <ShowCard key={show.id} show={show} />)
   return (
     <div>
-      <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
-      <motion.div layout className='videos'>
+      <p className='exit' onClick={() => navigate('/')}><TbCircleLetterX/></p>
+      <motion.div className='videos'>
         {
           mappedShows
         }

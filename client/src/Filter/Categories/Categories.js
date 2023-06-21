@@ -11,7 +11,7 @@ function Categories() {
   }
   return (
     <div>
-      <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
+      <p className='exit' onClick={() => navigate('/')}><TbCircleLetterX /></p>
       <form>
         <button value='Drama' onClick={handleClick}>Drama</button>
         <button value='Reality TV' onClick={handleClick}>Reality TV</button>
