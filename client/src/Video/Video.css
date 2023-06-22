@@ -24,3 +24,31 @@
     width: 100%;
     object-fit: cover;
 }
+
+#info-pg-poster {
+    /* width: 30rem;
+    margin: auto;
+    display: block;
+    margin-top: 15vh; */
+    width: 50vw;
+    height: 100vh;
+    /* margin-top: 4rem; */
+    /* object-fit: cover; */
+    margin-left: 50%;
+    position: fixed;
+}
+
+#info-body {
+    position: absolute;
+    top: 30vh;
+    margin-left: 10rem;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+}
+
+#description {
+    width: 50%;
+    /* background-color: rgb(240, 248, 255, 0.1); */
+    /* box-shadow: inset 25px 15px 15px 15px rgb(255, 255, 255, 0.1); */
+}

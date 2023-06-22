@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Settings.css'
-import { TbCircleLetterX } from 'react-icons/tb'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
-import Watched from './Watched'
 
 
 function Settings({ currentUser, handleLogout }) {
@@ -12,7 +11,7 @@ function Settings({ currentUser, handleLogout }) {
   }
   return (
     <div>
-        <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
+        <p onClick={() => navigate('/')}><FiArrowLeft/></p>
         <h2>{ currentUser.first_name }</h2>
         <h2>{ currentUser.last_name }</h2>
         <h2>{ currentUser.email }</h2>

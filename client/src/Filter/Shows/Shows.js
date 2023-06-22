@@ -1,6 +1,6 @@
 import React from 'react'
 import '../filter.css'
-import { TbCircleLetterX } from 'react-icons/tb'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import ShowCard from './ShowCard'
 import { motion } from 'framer-motion'
@@ -11,7 +11,7 @@ function Shows({ videos }) {
   const mappedShows = filterShows.map(show => <ShowCard key={show.id} show={show} />)
   return (
     <div>
-      <p className='exit' onClick={() => navigate('/')}><TbCircleLetterX/></p>
+      <p className='exit' onClick={() => navigate('/')}><FiArrowLeft/></p>
       <motion.div className='videos'>
         {
           mappedShows

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../filter.css'
-import { TbCircleLetterX } from 'react-icons/tb'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 
 function Categories() {
@@ -11,7 +11,7 @@ function Categories() {
   }
   return (
     <div>
-      <p className='exit' onClick={() => navigate('/')}><TbCircleLetterX /></p>
+      <p className='exit' onClick={() => navigate('/')}><FiArrowLeft/></p>
       <form>
         <button value='Drama' onClick={handleClick}>Drama</button>
         <button value='Reality TV' onClick={handleClick}>Reality TV</button>

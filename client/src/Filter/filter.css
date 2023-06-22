@@ -14,5 +14,7 @@
 }
 
 .exit {
-    size: 2rem;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    display: inline-block;
 }
