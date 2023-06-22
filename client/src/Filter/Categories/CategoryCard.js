@@ -1,6 +1,6 @@
 import React from 'react'
-import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 function CategoryCard({video}) {
     const navigate = useNavigate()
@@ -8,10 +8,13 @@ function CategoryCard({video}) {
       navigate('/videoInfo', {state: video})
     }
   return (
-    <div>
-        <p onClick={() => navigate('/')}><FiArrowLeft/></p>
-        <img src={video.image} alt='poster' onClick={handleClick}/>
-    </div>
+    <motion.div
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity: 1, y: 1}}
+    transition={{duration: 1.5, delay: 0.3}}
+    >
+        <img src={video.image} alt='poster' className='allVids-cat' onClick={handleClick}/>
+    </motion.div>
   )
 }
 

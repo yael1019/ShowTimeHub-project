@@ -13,10 +13,33 @@
     object-fit: cover;
 }
 
+.video-cat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 2rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    margin-top: 20vh;
+}
+
+.allVids-cat {
+    height: 27rem;
+    width: 100%;
+    object-fit: contain;
+}
+
 .exit {
     cursor: pointer;
     margin-left: 1.5rem;
     display: inline-block;
+}
+
+.exit-cat {
+    cursor: pointer;
+    margin-left: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    top: 0;
 }
 
 #category-form {
