@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion, useInView, useAnimation, Variants } from 'framer-motion'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 function VideoCard({ video }) {
   const navigate = useNavigate()

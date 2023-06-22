@@ -1,13 +1,16 @@
 import React from 'react'
-import { TbCircleLetterX } from 'react-icons/tb'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 
 function CategoryCard({video}) {
     const navigate = useNavigate()
+    function handleClick() {
+      navigate('/videoInfo', {state: video})
+    }
   return (
     <div>
-        <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
-        <img src={video.image} alt='poster'/>
+        <p onClick={() => navigate('/')}><FiArrowLeft/></p>
+        <img src={video.image} alt='poster' onClick={handleClick}/>
     </div>
   )
 }
