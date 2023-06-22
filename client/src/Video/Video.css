@@ -6,6 +6,7 @@
     margin: 2rem;
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
+    /* object-fit: contain; */
 }
 
 #first{
@@ -20,9 +21,15 @@
     /* margin-left: 1rem; */
     /* margin-bottom: 2.5rem; */
     /* height: 30vh; */
-    height: 27rem;
+    height: 25rem;
     width: 100%;
     object-fit: cover;
+}
+
+.searching-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #info-pg-poster {

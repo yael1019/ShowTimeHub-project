@@ -27,7 +27,15 @@ function Video({ videos }) {
       // transition={{duration: 2}}
       className='flexImage'>
         {
+          searching === ''
+          ?
           mappedVideo
+          :
+          <div className='searching-videos'>
+            {
+              mappedVideo
+            }
+          </div>
         }
       </motion.div>
     </div>
