@@ -8,3 +8,45 @@
     margin-top: 4rem;
     /* size: 4rem; */
 }
+
+.settingDiv {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 20vh;
+    margin-left: 10rem;
+    font-family: 'Bebas Neue', sans-serif;
+    row-gap: 1rem;
+}
+
+.info {
+    font-size: 2rem;
+    /* text-align: center; */
+    margin: 0;
+}
+
+.watched {
+    color: red;
+    cursor: pointer;
+    width: 10rem;
+}
+
+#logout {
+    width: 19%;
+    height: 2.3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    /* align-self: center; */
+    color: white;
+    background-color: rgb(225, 10, 10);
+    border: 2px solid white;
+    box-shadow: 5px 4px 5px white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* .watched:hover {
+    border-bottom: 1px solid red;
+    width: 10rem;
+} */
