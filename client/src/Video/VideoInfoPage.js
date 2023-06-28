@@ -27,6 +27,17 @@ function VideoInfoPage() {
           <p>{ video.rating }</p>
           <p id='description'>{ video.description }</p>
         </motion.div>
+        <div className='video-responsive'>
+          <iframe
+            width="530"
+            height="260"
+            src='https://www.youtube.com/embed/I1hNAIzkQWY'
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+          />
+        </div>
     </div>
   )
 }

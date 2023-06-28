@@ -47,7 +47,7 @@
 
 #info-body {
     position: absolute;
-    top: 30vh;
+    top: 15vh;
     margin-left: 10rem;
     color: white;
     font-family: 'Bebas Neue', sans-serif;
@@ -58,4 +58,9 @@
     width: 50%;
     /* background-color: rgb(240, 248, 255, 0.1); */
     /* box-shadow: inset 25px 15px 15px 15px rgb(255, 255, 255, 0.1); */
+}
+
+iframe {
+    margin-top: 55vh;
+    margin-left: 10rem;
 }
