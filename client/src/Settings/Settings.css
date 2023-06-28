@@ -50,3 +50,10 @@
     border-bottom: 1px solid red;
     width: 10rem;
 } */
+
+#minion {
+    width: 30rem;
+    display: block;
+    margin-top: -45vh;
+    margin-left: 40vw;
+}

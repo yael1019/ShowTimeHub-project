@@ -3,7 +3,7 @@ import './Settings.css'
 import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-
+import minion from './minion-noback.png'
 
 function Settings({ currentUser, handleLogout }) {
   const navigate = useNavigate()
@@ -29,6 +29,7 @@ function Settings({ currentUser, handleLogout }) {
           whileHover={{scaleY: 1.1}}
           whileTap={{backgroundColor: 'black', scale: 0.9}}
           onClick={ handleLogout } id='logout'>Logout</motion.button>
+          <img src={minion} alt='minion' id='minion'/>
         </motion.div>
     </div>
   )
