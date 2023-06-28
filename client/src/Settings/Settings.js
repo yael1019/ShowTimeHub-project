@@ -12,7 +12,7 @@ function Settings({ currentUser, handleLogout }) {
   }
   return (
     <div>
-        <p onClick={() => navigate('/')}><FiArrowLeft/></p>
+        <p onClick={() => navigate('/')} className='exit'><FiArrowLeft/></p>
         <motion.div
         initial={{opacity: 0}}
         animate={{opacity: 1}}

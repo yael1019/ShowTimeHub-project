@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { TbCircleLetterX } from 'react-icons/tb'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import WatchedCard from './WatchedCard'
+import './Settings.css'
 
 function Watched() {
     const navigate = useNavigate()
@@ -16,10 +17,12 @@ function Watched() {
     const mappedWatched = watched.map(video => <WatchedCard key={video.id} video={video} />)
   return (
     <div>
-        <p onClick={() => navigate('/')}><TbCircleLetterX /></p>
-        {
-            mappedWatched
-        }
+        <p className='exit' onClick={() => navigate('/')}><FiArrowLeft/></p>
+        <div className='watchedvidsdiv'>
+          {
+              mappedWatched
+          }
+        </div>
     </div>
   )
 }

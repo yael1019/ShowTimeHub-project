@@ -57,3 +57,18 @@
     margin-top: -45vh;
     margin-left: 40vw;
 }
+
+.watchedvidsdiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 2rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    margin-top: 20vh;
+}
+
+.watchedvids {
+    height: 27rem;
+    width: 100%;
+    object-fit: contain;
+}

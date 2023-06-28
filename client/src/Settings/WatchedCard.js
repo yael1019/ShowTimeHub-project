@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
 
 function WatchedCard({ video }) {
   const navigate = useNavigate()
@@ -7,9 +9,13 @@ function WatchedCard({ video }) {
     navigate('/videoInfo', {state: video})
   }
   return (
-    <div>
-        <img src={ video.image } alt='poster' onClick={handleClick}/>
-    </div>
+    <motion.div
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity: 1, y: 1}}
+    transition={{duration: 1.5, delay: 0.3}}
+    >
+        <img src={ video.image } alt='poster' onClick={handleClick} className='watchedvids'/>
+    </motion.div>
   )
 }
 
