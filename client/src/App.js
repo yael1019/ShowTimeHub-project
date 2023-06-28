@@ -12,6 +12,7 @@ import SingleCategory from './Filter/Categories/SingleCategory';
 import Login from './Login/Login';
 import Watched from './Settings/Watched';
 import VideoInfoPage from './Video/VideoInfoPage';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -70,7 +71,8 @@ function App() {
   if(!loaded) {
     return (
       <>
-        <p>Loading</p>
+        <p id='loading'>Loading</p>
+        <PacmanLoader color="#36d7b7" id='spinner'/>
       </>
     )
   }

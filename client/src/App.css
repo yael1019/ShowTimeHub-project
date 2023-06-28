@@ -17,3 +17,15 @@ body {
  div{
   color: white;
  } */
+
+#loading {
+  text-align: center;
+  margin-top: 40vh;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+}
+
+#spinner {
+  margin-left: 54rem;
+  margin-top: -10rem;
+}
