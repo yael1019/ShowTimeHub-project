@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import Homepage from './Homepage/Homepage';
 import Settings from './Settings/Settings';
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import NoMatch from './NoMatch'
+import NoMatch from './NoMatch/NoMatch'
 import Movies from './Filter/Movies/Movies';
 import Shows from './Filter/Shows/Shows';
 import Nav from './Nav/Nav'

@@ -1,0 +1,14 @@
+#nomatch {
+    margin-top: 40vh;
+    font-size: 10rem;
+}
+
+#ohno {
+    /* background-color: transparent; */
+    /* position: relative; */
+    height: 10rem;
+    display: block;
+    /* margin: auto; */
+    margin-top: -45vh;
+    margin-left: 10rem;
+}
