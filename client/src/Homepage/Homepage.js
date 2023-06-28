@@ -4,7 +4,7 @@ import './Homepage.css'
 import { motion } from 'framer-motion'
 
 
-function Homepage({ videos }) {
+function Homepage({ videos, moved, setMoved }) {
   return (
     <div>
         <motion.h1
@@ -12,7 +12,7 @@ function Homepage({ videos }) {
         animate={{opacity: 1, y: 0}}
         transition={{duration: 1.5, delay: 0.3}}
         >ShowTimeHub</motion.h1>
-        <Video videos={videos}/>
+        <Video videos={videos} moved={ moved } setMoved={ setMoved } />
     </div>
   )
 }

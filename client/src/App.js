@@ -18,6 +18,7 @@ function App() {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(null)
   const [loaded, setLoaded] = useState(false)
+  const [moved, setMoved] = useState(false)
 
   useEffect(() => {
     fetch('/check_session')
@@ -81,9 +82,9 @@ function App() {
         ?
         (
           <>
-            <Nav />
+            <Nav moved={ moved }/>
             <Routes>
-              <Route path='/' element={ <Homepage videos={videos} handleLogout={ handleLogout }/> }/>
+              <Route path='/' element={ <Homepage videos={videos} handleLogout={ handleLogout } moved={ moved } setMoved={ setMoved }/> }/>
               <Route path='settings' element={ <Settings currentUser={ currentUser } handleLogout={handleLogout} /> }/>
               <Route path='watched' element={ <Watched /> }/>
               <Route path='*' element={ <NoMatch /> }/>

@@ -25,7 +25,25 @@
     padding-left: 15px;
     text-decoration: none;
     color: white;
+
 }
+/* #moviesMoved{
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 62rem;
+    /* border: 2px solid white; */
+    /* border-radius: 10%; */
+    /* padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+    animation: slideoutMovies 2s ease-out; */
+/* } */ 
 
 #shows {
     position: absolute;
@@ -44,6 +62,24 @@
     color: white;
 }
 
+/* #showsMoved {
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    margin-top: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 72rem;
+    /* border: 2px solid white; */
+    /* border-radius: 10%; */
+    /* padding: 10px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* text-decoration: none; */
+    /* color: white; */
+    /* animation: slideoutShows 2s ease-out; */
+/* } */ 
+
 #categories {
     position: absolute;
     top: 0;
@@ -61,9 +97,56 @@
     color: white;
 }
 
+/* #categoriesMoved { */
+    /* position: absolute; */
+    /* top: 0; */
+    /* margin: 1rem; */
+    /* margin-top: 4rem; */
+    /* font-family: 'Bebas Neue', sans-serif; */
+    /* font-size: 1.2rem; */
+    /* margin-left: 80.5rem; */
+    /* padding: 10px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* text-decoration: none; */
+    /* color: white; */
+    /* animation: slideout 2s ease-out; */
+/* } */
+
 .active {
    /* background-color: rgb(199, 7, 7);  */
    border-bottom: 1px solid red;
    border-top: 1px solid red;
    font-size: 1.5rem;
 }
+
+/* @keyframes slideout {
+    from {
+        transform: translateX(0);
+        margin-left: 20rem;
+    }
+    to {
+         transform: translateX(1%);
+         /* margin-left: 74rem; */
+    /* } */
+/* } */ 
+/* @keyframes slideoutMovies {
+    from {
+        transform: translateX(0);
+        margin-left: 4rem;
+    }
+    to {
+         transform: translateX(1%);
+         /* margin-left: 50rem; */
+    /* } */
+/* } */ 
+/* @keyframes slideoutShows {
+    from {
+        transform: translateX(0);
+        margin-left: 12rem;
+    }
+    to {
+         transform: translateX(1%);
+         /* margin-left: 50rem; */
+    /* } */
+/* } */

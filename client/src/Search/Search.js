@@ -3,10 +3,11 @@ import './Search.css'
 import { CgSearch } from 'react-icons/cg'
 import { motion } from 'framer-motion'
 
-function Search({ searching, setSearching }) {
+function Search({ searching, setSearching, moved, setMoved }) {
   const [search, setSearch] = useState(false)
   function handleClick() {
     setSearch(!search)
+    // setMoved(!moved)
   }
   function handleChange(e) {
     setSearching(e.target.value)
@@ -44,10 +45,10 @@ function Search({ searching, setSearching }) {
         id='searchIcon' onClick={handleClick}><CgSearch/></motion.p>
         <motion.input 
         animate={{
-          width: search ? 200 : 0,
+          width: search ? 360 : 0,
           // backgroundColor: search ? "white" : "transparent",
           transition: {
-            duration: 0.5,
+            duration: 0.6,
             ease: "circOut"
           }
         }}

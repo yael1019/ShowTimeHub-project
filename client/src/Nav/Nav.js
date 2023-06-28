@@ -5,7 +5,7 @@ import { FaRegUserCircle } from 'react-icons/fa'
 import { useRef } from 'react';
 import { motion } from 'framer-motion'
 
-function Nav() {
+function Nav({ moved }) {
   const navRef = useRef()
   function navButtons() {
     navRef.current.classList.toggle('active')
@@ -18,8 +18,8 @@ function Nav() {
      ref={navRef}>
         <NavLink id='userIcon' to='settings'><FaRegUserCircle size={25}/></NavLink>
         <NavLink onClick={navButtons} id='movies' to='movies'>Movies</NavLink>
-        <NavLink id='shows' to='shows'>Shows</NavLink>
-        <NavLink id='categories' to='categories'>Categories</NavLink>
+        <NavLink onClick={navButtons} id='shows' to='shows'>Shows</NavLink>
+        <NavLink onClick={navButtons} id='categories' to='categories'>Categories</NavLink>
     </motion.div>
   )
 }

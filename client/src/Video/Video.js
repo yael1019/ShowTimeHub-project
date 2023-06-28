@@ -5,14 +5,14 @@ import Search from '../Search/Search'
 import HomeCard from './HomeCard'
 import { motion, useScroll } from 'framer-motion'
 
-function Video({ videos }) {
+function Video({ videos, moved, setMoved }) {
   const [searching, setSearching] = useState('')
   // const { scrollYProgress } = useScroll({})
   const filteredSearch = videos.filter(video => video.title.toLowerCase().includes(searching.toLowerCase()))
   const mappedVideo = filteredSearch.map(video => video.id === 1 ? null : <VideoCard key={video.id} video={video} />)
   return (
     <div>
-      <Search searching={ searching } setSearching={ setSearching }/>
+      <Search searching={ searching } setSearching={ setSearching } moved={ moved } setMoved={ setMoved } />
       {
         videos[0] !== undefined && searching == ''
         ?
