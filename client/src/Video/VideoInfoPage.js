@@ -29,9 +29,9 @@ function VideoInfoPage() {
         </motion.div>
         <div className='video-responsive'>
           <iframe
-            width="530"
-            height="260"
-            src='https://www.youtube.com/embed/I1hNAIzkQWY'
+            width="500"
+            height="240"
+            src={`${video.url}`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

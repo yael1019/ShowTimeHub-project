@@ -74,6 +74,7 @@ class Video(db.Model):
     rating = db.Column(db.Integer)
     description = db.Column(db.Text)
     image = db.Column(db.String)
+    url = db.Column(db.String)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), onupdate=db.func.now())
 
@@ -92,7 +93,8 @@ class Video(db.Model):
             "type": self.type,
             "rating": self.rating,
             "description": self.description,
-            "image": self.image
+            "image": self.image,
+            "url": self.url
         }
 
 # ipdb.set_trace()
