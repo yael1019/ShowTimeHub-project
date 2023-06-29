@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import './Login.css'
+import { useNavigate } from 'react-router-dom'
 
 function Login({ handleLogin }) {
     const [form, setForm] = useState({
       'email': '',
       'password': ''
     })
+    const navigate = useNavigate()
+
     function handleChange(e) {
       setForm({
         ...form,
@@ -20,6 +23,11 @@ function Login({ handleLogin }) {
         'password': ''
       })
     }
+
+    function handleClick() {
+      navigate('/create')
+    }
+    
   return (
     <div>
       <form onSubmit={ handleSubmit }>
@@ -27,6 +35,7 @@ function Login({ handleLogin }) {
         <input type='password' placeholder='password' name='password' value={ form.password } onChange={ handleChange }/>
         <input type="submit" value='Login'/>
       </form>
+      <button onClick={() => handleClick()}>Create Account</button>
     </div>
   )
 }

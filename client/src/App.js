@@ -13,6 +13,7 @@ import Login from './Login/Login';
 import Watched from './Settings/Watched';
 import VideoInfoPage from './Video/VideoInfoPage';
 import PacmanLoader from "react-spinners/PacmanLoader";
+import CreateAccount from './CreateAccount/CreateAccount';
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -27,6 +28,8 @@ function App() {
         if(res.ok) {
           res.json()
           .then(data => setCurrentUser(data))
+          setLoaded(true)
+        } else {
           setLoaded(true)
         }
       })
@@ -60,6 +63,26 @@ function App() {
         }
       })
   }
+
+  function handleCreate(form) {
+    fetch('/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accepts': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+      .then(res => {
+        if(res.ok) {
+          // res.json()
+          // .then(data => console.log(data))
+        } else {
+          alert('Error')
+        }
+      })
+  }
+
   function handleLogout() {
     setCurrentUser(null)
     fetch('/logout', {
@@ -100,7 +123,13 @@ function App() {
           </>
         )
         :
-        <Login handleLogin={ handleLogin }/>
+        <>
+          {/* <Login handleLogin={ handleLogin }/> */}
+          <Routes>
+            <Route path='/login' element={ <Login handleLogin={ handleLogin } /> } />
+            <Route path='/create' element={ <CreateAccount handleCreate={ handleCreate } /> } />
+          </Routes>
+        </>
       }
     </div>
   );
