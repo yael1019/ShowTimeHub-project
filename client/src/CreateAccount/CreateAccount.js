@@ -23,15 +23,17 @@ function CreateAccount({ handleCreate }) {
         navigate('/login')
     }
   return (
-    <div>
-        <p className='exit' onClick={() => navigate('/login')}><FiArrowLeft/></p>
-        <form onSubmit={handleSubmit}>
-            <input type='text' name='first_name' placeholder='First Name' value={form.first_name} onChange={handleChange} />
-            <input type='text' name='last_name' placeholder='Last Name' value={form.last_name} onChange={handleChange}/>
-            <input type='email' name='email' placeholder='Email' value={form.email} onChange={handleChange}/>
-            <input type='password' name='password' placeholder='Password' value={form.password} onChange={handleChange}/>
-            <input type='submit' value='Create Account' />
-        </form>
+    <div className='login-background'>
+        <div className='login-black'>
+            <p className='exit' onClick={() => navigate('/')}><FiArrowLeft/></p>
+            <form onSubmit={handleSubmit}>
+                <input type='text' name='first_name' placeholder='First Name' value={form.first_name} onChange={handleChange} />
+                <input type='text' name='last_name' placeholder='Last Name' value={form.last_name} onChange={handleChange}/>
+                <input type='email' name='email' placeholder='Email' value={form.email} onChange={handleChange}/>
+                <input type='password' name='password' placeholder='Password' value={form.password} onChange={handleChange}/>
+                <input type='submit' value='Create Account' />
+            </form>
+        </div>
     </div>
   )
 }

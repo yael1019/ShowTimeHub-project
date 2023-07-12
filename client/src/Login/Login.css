@@ -1,0 +1,86 @@
+.login-black {
+    background-color: rgb(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* z-index: 2; */
+}
+
+.login-background {
+    background-image: url('https://liteapks.com/wp-content/uploads/2022/12/netflix-cover-e1673026955778.jpeg');
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: ; */
+}
+
+.login-h1 {
+    text-align: left;
+    margin-left: 1em;
+    text-shadow: 3px 3px 3px black;
+    font-size: 3rem;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.login-h2 {
+    color: red;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    text-shadow: 3px 3px 3px black;
+    margin: 1rem;
+}
+
+.login-p {
+    color: white;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.3rem;
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 3px 3px 3px black;
+}
+
+.login-p-line2 {
+    color: white;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+    margin: 1rem;
+    text-shadow: 3px 3px 3px black;
+}
+
+.login-input {
+    width: 24em;
+    height: 2.5em;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.login-loginbtn {
+    width: 22%;
+    height: 2.3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    align-self: center;
+    color: white;
+    background-color: rgb(225, 10, 10);
+    border: 2px solid white;
+    box-shadow: 5px 4px 5px white;
+    border-radius: 10px;
+    cursor: pointer;
+}
