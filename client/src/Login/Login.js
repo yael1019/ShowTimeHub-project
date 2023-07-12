@@ -44,7 +44,7 @@ function Login({ handleLogin }) {
             whileTap={{backgroundColor: 'black', scale: 0.9}}
             className='login-loginbtn' type="submit" value='Login'/>
           </form>
-        <button onClick={() => handleClick()}>Create Account</button>
+        <button className='login-btn' onClick={() => handleClick()}>Create Account</button>
       </div>
     </div>
   )

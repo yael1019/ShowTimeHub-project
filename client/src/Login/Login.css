@@ -84,3 +84,15 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.login-btn {
+    color: rgb(225, 10, 10);
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1.5em;
+    position: absolute;
+    left: 45%;
+    text-shadow: 3px 3px 3px black;
+}
