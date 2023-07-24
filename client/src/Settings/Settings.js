@@ -10,6 +10,27 @@ function Settings({ currentUser, handleLogout }) {
   function handleWatched() {
     navigate('/watched', {state: currentUser})
   }
+  function handleDelete() {
+    // console.log(currentUser)
+    if(window.confirm('Are you sure you want to delete your account? \nThis action can not be undone and will result in a loss of all your data.')) {
+      fetch(`/users/${currentUser.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accepts': 'application/json'
+        }
+      })
+      .then(res => {
+        if(res.ok) {
+          handleLogout()
+          alert('Account has been deleted.')
+        }
+      })
+    } else {
+      console.log('false')
+    }
+    
+  }
   return (
     <div>
         <p onClick={() => navigate('/')} className='exit'><FiArrowLeft/></p>
@@ -29,6 +50,12 @@ function Settings({ currentUser, handleLogout }) {
           whileHover={{scaleY: 1.1}}
           whileTap={{backgroundColor: 'black', scale: 0.9}}
           onClick={ handleLogout } id='logout'>Logout</motion.button>
+          <motion.button
+          id='deleteAccount'
+          whileHover={{scaleY: 1.1}}
+          whileTap={{backgroundColor: 'black', scale: 0.9}}
+          onClick={handleDelete}
+          >Delete Account</motion.button>
           <img src={minion} alt='minion' id='minion'/>
         </motion.div>
     </div>
