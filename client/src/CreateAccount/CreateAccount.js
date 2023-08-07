@@ -21,12 +21,12 @@ function CreateAccount({ handleCreate }) {
     function handleSubmit(e) {
         e.preventDefault()
         handleCreate(form)
-        navigate('/login')
+        navigate('/')
     }
   return (
     <div className='login-background'>
         <div className='login-black'>
-            <p className='exit' onClick={() => navigate('/login')}><FiArrowLeft/></p>
+            <p className='exit' onClick={() => navigate('/')}><FiArrowLeft/></p>
             <h2 className='create-h2'>Sign Up</h2>
             <form className='login-form' onSubmit={handleSubmit}>
                 <input className='login-input' type='text' name='first_name' placeholder='   First Name' value={form.first_name} onChange={handleChange} />

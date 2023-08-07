@@ -88,7 +88,7 @@ function App() {
     fetch('/logout', {
       method: 'DELETE'
     })
-    navigate('/login')
+    navigate('/')
   }
 
   if(!loaded) {
@@ -126,7 +126,7 @@ function App() {
         <>
           {/* <Login handleLogin={ handleLogin }/> */}
           <Routes>
-            <Route path='/login' element={ <Login handleLogin={ handleLogin } /> } />
+            <Route path='/' element={ <Login handleLogin={ handleLogin } /> } />
             <Route path='/create' element={ <CreateAccount handleCreate={ handleCreate } /> } />
           </Routes>
         </>
